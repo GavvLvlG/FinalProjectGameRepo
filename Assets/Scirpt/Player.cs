@@ -57,4 +57,22 @@ public class Player : MonoBehaviour
         
         Destroy(bulletInstance, 5f); 
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("Exit");
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("Stay");
+    }
 }
